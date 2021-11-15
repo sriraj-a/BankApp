@@ -1,0 +1,15 @@
+﻿using IDFCBankApplication.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace IDFCBankApplication.DataAccess.RegistrationData
+{
+    interface IRegistrationDataAccess
+    {
+        RegistrationEntities CreateUser(RegistrationEntities registrationEntities);
+        RegistrationEntities UpdateUser(RegistrationEntities registrationEntities);
+    }
+}

@@ -1,0 +1,81 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top" style="margin-top: 70px;background-color: gold">
+    <div class="container">        
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active-mynav">@Html.ActionLink("My Loans", "ApplyLoan", "Loan")</li>
+                <li>@Html.ActionLink("My Details", "UpdateUserDetails", "Registration")</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<form>
+    <div class="form-group row" style="margin-left:170px;margin-top:45px;">
+        <label for="loanType" class="col-sm-2 col-form-label" style="color:white;font-size:20px;">Loan Type:</label>
+        <div class="col-sm-10">
+            <select class="form-control" id="loanType" >
+                <option id="Vehicle Loan">Vehicle Loan</option>
+                <option id="Home Loan">Home Loan</option>
+                <option id="Jewel Loan">Jewel Loan</option>
+                <option id="Personal Loan">Personal Loan</option>
+                <option id="Education Loan">Education Loan</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row" style="margin-left:170px;">
+        <label for="loanAmount" class="col-sm-2 col-form-label" style="color:white;font-size:20px;">Loan Amount:</label>
+        <div class="col-sm-10" style="margin-top:18px;">
+            <input type="text" class="form-control" id="loanAmount" placeholder="Loan Amount">
+        </div>
+    </div>
+    <div class="form-group row" style="margin-left:170px;">
+        <label for="applyingDate" class="col-sm-2 col-form-label" style="color:white;font-size:20px;">Applying Date :</label>
+        <div class="col-sm-10" style="margin-top:17px;">
+            <input type="text" class="form-control" id="applyingDate" placeholder="Date format (MM-dd-yyyy)">
+        </div>
+    </div>
+    <div class="form-group row" style="margin-left:170px;">
+        <label for="roi" class="col-sm-2 col-form-label" style="color:white;font-size:20px;">Rate Of Interest:</label>
+        <div class="col-sm-10" style="margin-top:18px;">
+            <input type="text" class="form-control" id="roi" placeholder="First Name">
+        </div>
+    </div>
+    <div class="form-group row" style="margin-left:170px;">
+        <label for="duration" class="col-sm-2 col-form-label" style="color:white;font-size:20px;">Duration in Days:</label>
+        <div class="col-sm-10" style="margin-top:18px;">
+            <input type="text" class="form-control" id="duration" placeholder="(For eg: 36 days)">
+        </div>
+    </div>
+    <div class="form-group" style="margin-left:514px;">
+        <button class="button" onclick="loanSubmit()">Submit</button>
+    </div>
+</form>
+@*@{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5);}
+@wbgrid.GetHtml(
+    tableStyle:"table",
+    htmlAttributes:new { @id="GridId"}
+    //Columns:wbgrid.Columns( 
+    //wbgrid.Column("Id","Id")
+    //)
+    )*@
+
+
+<style>
+    .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 8px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+    .active-mynav, .btn:hover {
+        font-size: 20px;
+        /*background-color: rgba(247, 177, 102, 1);*/
+        background-color: rgba(255, 239, 138, 0.96);
+    }
+</style>
